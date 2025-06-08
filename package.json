@@ -1,0 +1,16 @@
+{
+  "name": "cfproxy-rs",
+  "version": "0.1.0",
+  "description": "Socks5 proxy server based on Cloudflare Workers/Pages.",
+  "homepage": "https://github.com/achyuki/cfproxy-rs#readme",
+  "bugs": {
+    "url": "https://github.com/achyuki/cfproxy-rs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achyuki/cfproxy-rs.git"
+  },
+  "license": "MIT",
+  "author": "achyuki",
+  "main": "_worker.js"
+}

@@ -1,0 +1,4 @@
+name = "cfproxy-rs"
+main = "_worker.js"
+compatibility_date = "2025-06-09"
+# workers_dev = true

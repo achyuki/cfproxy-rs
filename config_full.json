@@ -1,0 +1,12 @@
+// Don't save with comments, it will not be parsed!!
+{
+  "cfhost": "xxxx.pages.dev", // Cloudflare workers/pages domain [Required]
+  "cfip": "104.16.0.0", // Cloudflare IP, generally no changes are required, or via https://github.com/XIU2/CloudflareSpeedTest
+  "token": "", // Authentication token
+  "host": "127.0.0.1", // SOCKS5 bind address
+  "port": 4514, // SOCKS5 bind port
+  "user": "", // SOCKS5 username
+  "passwd": "", // SOCKS5 password
+  "log": "", // Log saving path
+  "loglevel": "info" // Log level (error/warn/info/debug/trace)
+}
