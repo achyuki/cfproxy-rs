@@ -16,7 +16,7 @@ cargo build --release
 
 Before using it, you need to deploy this project on Cloudflare workers or pages.
 
-1. Fork this repository
+1. [Fork](https://github.com/achyuki/cfproxy-rs/fork) this repository
 2. Deploy on Cloudflare pages
 3. Configure `TOKEN`​ in environment variable
 
