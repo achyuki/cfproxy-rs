@@ -10,7 +10,7 @@ use std::path::PathBuf;
 #[derive(Parser, Debug)]
 #[command(name = "cfproxy-rs")]
 #[command(author = "achyuki")]
-#[command(version = "0.1.0")]
+#[command(version = "0.1.1")]
 #[command(about = "Socks5 proxy server based on Cloudflare Workers/Pages.", long_about = None)]
 pub struct Args {
     /// Config file path

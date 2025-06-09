@@ -82,10 +82,10 @@ async fn handle_client(stream: TcpStream, config: Arc<Config>) -> Result<(), Err
         .await?;
 
     info!("Connected: {}:{} via {}", host, port, peer_addr);
-    tokio::try_join!(
-        proxy_tcp_to_ws(&mut reader, ws_write),
-        proxy_ws_to_tcp(ws_read, &mut writer)
-    )?;
+    tokio::select! {
+        res = proxy_tcp_to_ws(&mut reader, ws_write) => res?,
+        res = proxy_ws_to_tcp(ws_read, &mut writer) => res?,
+    };
 
     info!("Connection closed: {}:{} via {}", host, port, peer_addr);
     Ok(())

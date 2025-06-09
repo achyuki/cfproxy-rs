@@ -42,6 +42,7 @@ pub async fn proxy_tcp_to_ws(
             }
         }
     }
+    ws_write.send(Message::Close(None)).await?;
     Ok(())
 }
 
@@ -68,5 +69,6 @@ pub async fn proxy_ws_to_tcp(
             _ => continue,
         }
     }
+    writer.shutdown().await?;
     Ok(())
 }
