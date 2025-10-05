@@ -19,7 +19,7 @@ const BUFFER_SIZE: usize = 32 * 1024;
 
 // SOCKS5 -> CF
 pub async fn proxy_tcp_to_ws(
-    reader: &mut ReadHalf<TcpStream>,
+    mut reader: ReadHalf<TcpStream>,
     mut ws_write: SplitSink<WebSocketStream<TlsStream<TcpStream>>, Message>,
 ) -> Result<(), Errors> {
     debug!("Starting SOCKS5 to WebSocket proxy");
@@ -49,7 +49,7 @@ pub async fn proxy_tcp_to_ws(
 // CF -> SOCKS5
 pub async fn proxy_ws_to_tcp(
     mut ws_read: SplitStream<WebSocketStream<TlsStream<TcpStream>>>,
-    writer: &mut WriteHalf<TcpStream>,
+    mut writer: WriteHalf<TcpStream>,
 ) -> Result<(), Errors> {
     debug!("Starting WebSocket to SOCKS5 proxy");
     while let Some(msg) = ws_read.next().await {

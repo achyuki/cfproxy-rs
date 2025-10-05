@@ -1,6 +1,6 @@
 # cfproxy-rs
 
-> Socks5 proxy server based on Cloudflare Workers/Pages.  
+> Telegram socks5 proxy server based on Cloudflare Workers/Pages.  
 > Written in Rust! 🦀
 
 
@@ -54,13 +54,14 @@ Here is a complete configuration example.
 
 # Tips
 
-* Due to [issues with Cloudflare](https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/#considerations), outbound TCP sockets to Cloudflare IP ranges are temporarily blocked.
+* Due to [issues with Cloudflare](https://developers.cloudflare.com/workers/runtime-apis/tcp-sockets/#considerations), outbound TCP sockets to Cloudflare IP ranges are temporarily blocked.
 * Due to Cloudflare does not support it, UDP proxy is not supported yet.
+* As UDP DNS queries have not been processed yet, it currently only supports IP access, such as Telegram.
 * 中国大陆用户请使用 Pages 部署.
 
 ## TODO
 
-* [ ] ~~Support UDP proxy/DNS query~~
+* [ ] Support ~~UDP proxy/~~DNS query
 * [ ] Calling proxychains-ng/graftcp
 
 ## Credit
