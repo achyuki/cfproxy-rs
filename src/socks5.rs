@@ -113,8 +113,6 @@ async fn handshake(
     if methods.contains(&0x02) {
         writer.write_all(&[0x05, 0x02]).await?;
         auth_user(reader, writer, config).await?;
-    } else if methods.contains(&0x00) {
-        writer.write_all(&[0x05, 0x00]).await?;
     } else {
         writer.write_all(&[0x05, 0xff]).await?;
         return Err(Errors::IoError(Error::new(
